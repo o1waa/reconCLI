@@ -23,8 +23,11 @@ Queries the **NVD (National Vulnerability Database) REST API** to automatically 
 ```bash
 python cve_checker.py -p <product_name> -v <version>
 
----
 https://github.com/o1waa/fast_scanner
+
+
+---
+
 
 
 
