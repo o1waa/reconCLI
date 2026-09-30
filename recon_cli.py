@@ -3,7 +3,6 @@ import subprocess
 import sys
 import os
 
-# Zjištění složky, kde fyzicky leží recon_cli.py
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PARENT_DIR = os.path.dirname(CURRENT_DIR)
 
@@ -75,17 +74,16 @@ def main():
     parser = argparse.ArgumentParser(description="Recon Framework CLI Orchestrator")
     subparsers = parser.add_subparsers(dest="mode", help="Dostupné moduly")
 
-    # Modul 1: Port Scanner
     p_ports = subparsers.add_parser("ports", help="Skenování portů")
     p_ports.add_argument("-t", "--target", required=True, help="Cílová IP / doména")
     p_ports.add_argument("-p", "--ports", help="Rozsah portů")
 
-    # Modul 2: Banner Grabber
+   
     p_banner = subparsers.add_parser("banner", help="Vytažení HTTP/SSL banneru")
     p_banner.add_argument("-t", "--target", required=True, help="Cílová IP / doména")
     p_banner.add_argument("-p", "--port", type=int, default=80, help="Cílový port")
 
-    # Modul 3: Directory Scanner
+  
     p_dir = subparsers.add_parser("dir", help="Enumerace HTTP adresářů")
     p_dir.add_argument("-u", "--url", required=True, help="Cílová URL")
     p_dir.add_argument("-w", "--wordlist", required=True, help="Cesta k wordlistu")
