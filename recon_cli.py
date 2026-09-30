@@ -37,7 +37,8 @@ def interactive_menu():
     print("1) Port Scanner (fast_scanner)")
     print("2) Banner Grabber (banner_grabber)")
     print("3) HTTP Directory Scanner (http_directory)")
-    print("4) Ukončit")
+    print("4) CVE Checker")  # <--- Přidej tento řádek
+    print("0) Exit")
     print("-" * 60)
 
     choice = input("Zvol možnost (1-4): ").strip()
@@ -68,7 +69,21 @@ def interactive_menu():
         run_script(script, args)
 
     elif choice == "4":
+        product = input("Zadej název služby/produktu (např. apache, openssh, nginx): ").strip()
+        version = input("Zadej verzi (volitelné, stiskni Enter pro přeskočení): ").strip()
+
+        script = find_script("cve_checker.py", "cve checker")
+        if script:
+            cmd = [sys.executable, script, "-p", product]
+            if version:
+                cmd.extend(["-v", version])
+            subprocess.run(cmd)
+        else:
+            print("[-] Skript cve_checker.py nebyl nalezen.")
+    elif choice == "0":
         sys.exit()
+    else:
+        print("[-] Neplatná volba.")
 
 def main():
     parser = argparse.ArgumentParser(description="Recon Framework CLI Orchestrator")
