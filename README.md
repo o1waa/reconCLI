@@ -2,6 +2,16 @@
 
 A modular, CLI-first offensive security reconnaissance framework written in Python. Designed to streamline initial footprinting, service identification, and web application enumeration.
 
+
+https://github.com/o1waa/fast_scanner
+
+https://github.com/o1waa/banner_grabber
+
+https://github.com/o1waa/http_directory
+
+https://github.com/o1waa/cve_checker
+ 
+
 ---
 
 ## 🛠️ Module Overview
@@ -22,12 +32,6 @@ Queries the **NVD (National Vulnerability Database) REST API** to automatically 
 **Standalone Usage:**
 ```bash
 python cve_checker.py -p <product_name> -v <version>
-
-https://github.com/o1waa/fast_scanner
-
-https://github.com/o1waa/banner_grabber
-
-https://github.com/o1waa/http_directory
 
 
 ---
