@@ -1,15 +1,28 @@
 # Recon CLI Framework
 
-Modulární Python framework určený pro základní průzkum (reconnaissance) webových aplikací a síťové infrastruktury.
+A modular, CLI-first offensive security reconnaissance framework written in Python. Designed to streamline initial footprinting, service identification, and web application enumeration.
 
-## Složení modulů
-- **Fast Scanner (`fast_scanner.py`)**: Vícevláknový port scanner pro rychlou detekci otevřených portů.
-- **Banner Grabber (`banner_grabber.py`)**: Vytažení HTTP/SSL hlaviček a identifikace služeb.
-- **HTTP Directory Scanner (`http_directory.py`)**: Fuzzing a enumerace skrytých adresářů a souborů.
-- **Orchestrator (`recon_cli.py`)**: Jednotné CLI a interaktivní menu pro spouštění všech modulů.
+---
 
-## Použití
+## 🛠️ Module Overview
 
-### Interaktivní režim
-```bash
+* **Fast Scanner (`fast_scanner.py`)**: Multithreaded TCP port scanner for rapid host reconnaissance.
+* **Banner Grabber (`banner_grabber.py`)**: Service and banner identification tool with HTTP and SSL/TLS support.
+* **HTTP Directory Scanner (`http_directory.py`)**: Fuzzing and enumeration tool for discovering hidden directories and files.
+* **Orchestrator (`recon_cli.py`)**: Unified management interface offering both an interactive terminal menu and direct command-line execution.
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/o1waa/reconCLI.git](https://github.com/o1waa/reconCLI.git)
+   cd recon
+
+
+pip install requests urllib3
+
+
 python recon_cli.py
+
